@@ -1,0 +1,71 @@
+<div class="backdrop is-open">
+  <div class="modal">
+    <button type="button" class="close-btn"></button>
+    <div class="product-modal">
+      <div class="product-gallery">
+        <img src="${images[0]}" class="main-img" alt="Product image" />
+        <div class="thumb-list">
+          <img src="${images[1]}" class="thumb" alt="Preview image" />
+          <img src="${images[2]}" class="thumb" alt="Preview image" />
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h2 class="product-title"></h2>
+        <p class="category"></p>
+        <p class="price"></p>
+        <div class="rating">зірочки</div>
+        <div class="product-colors">
+          <p class="label">Колір</p>
+          <ul class="color-checkbox-list">
+            <li class="color-checkbox-item">
+              <label class="color-checkbox-label">
+                <input
+                  type="checkbox"
+                  name="color"
+                  value="grey"
+                  class="color-checkbox-input"
+                  checked
+                />
+                <span
+                  class="color-checkbox-marker"
+                  style="background-color: #a1a1a1"
+                ></span>
+              </label>
+            </li>
+            <li class="color-checkbox-item">
+              <label class="color-checkbox-label">
+                <input
+                  type="checkbox"
+                  name="color"
+                  value="beige"
+                  class="color-checkbox-input"
+                />
+                <span
+                  class="color-checkbox-marker"
+                  style="background-color: #d3c1af"
+                ></span>
+              </label>
+            </li>
+            <li class="color-checkbox-item">
+              <label class="color-checkbox-label">
+                <input
+                  type="checkbox"
+                  name="color"
+                  value="dark"
+                  class="color-checkbox-input"
+                />
+                <span
+                  class="color-checkbox-marker"
+                  style="background-color: #2c2c3e"
+                ></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <p class="description"></p>
+        <button class="order-btn" data-id="${id}">Перейти до замовлення</button>
+      </div>
+    </div>
+  </div>
+</div>
