@@ -1,4 +1,6 @@
 .hero {
+    padding-top: 136px;
+    padding-bottom: 137px;
     height: 617px;
     background-image: image-set(
         url("../img/hero/hero-mobile.jpg") 1x,
@@ -13,12 +15,14 @@ font-size: 40px;
 line-height: 1.2;
 letter-spacing: 0.01em;
 color: #fff;
+margin-bottom: 24px;
 }
 
 .hero-description{
     font-size: 18px;
 line-height: 1.6;
 color: #fff;
+margin-bottom: 32px;
 }
 
 .hero-button{
@@ -38,6 +42,9 @@ border: none;
 
 @media screen and (min-width: 768px) { 
  .hero {
+    height: 396px;
+    padding-top: 79px;
+    padding-bottom: 80px;
         background-image: image-set(
             url("../img/hero/hero-tablet.jpg") 1x,
             url("../img/hero/hero-tablet@2x.jpg") 2x
@@ -45,7 +52,10 @@ border: none;
     }
 
 }
-
+.hero-button{
+width: 209px;
+height: 46px;
+}
 @media screen and (min-width: 1440px) { 
  .hero {
         background-image: image-set(
