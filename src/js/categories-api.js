@@ -7,17 +7,20 @@ const API_ENDPOINTS = {
   BYECATEGORY: '/furnitures/{id}',
   FEEDBACKS: '/feedbacks',
 };
+const ITEMS_PER_PAGE = 8;
 
 axios.defaults.baseURL = API_BASE_URL;
 
 export async function getCategories() {
-  const { data } = await axios(`${API_ENDPOINTS.CATEGORIES}`);
-  return data;
+  const res = await axios(`${API_ENDPOINTS.CATEGORIES}`);
+  return res.data;
 }
 
-async function init() {
-  const categories = await getCategories();
-  console.log(categories);
-}
+export async function getProducts(page) {
+  // const page = (currentPage - 1) * 8;
 
-init();
+  const res = await axios(
+    `${API_ENDPOINTS.PRODUCTS}?page=1&limit=${ITEMS_PER_PAGE}`
+  );
+  return res.data;
+}
