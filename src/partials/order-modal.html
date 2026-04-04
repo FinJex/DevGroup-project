@@ -1,6 +1,10 @@
 <div class="backdrop is-open">
   <div class="modal">
-    <button type="button" class="close-btn"></button>
+    <button type="button" class="modal-close-btn">
+      <svg class="modal-close-btn-svg" width="32" height="32">
+        <use href="../img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
     <div class="product-modal">
       <div class="product-gallery">
         <img src="${images[0]}" class="main-img" alt="Product image" />
@@ -11,9 +15,9 @@
       </div>
 
       <div class="product-info">
-        <h2 class="product-title"></h2>
-        <p class="category"></p>
-        <p class="price"></p>
+        <h2 class="product-title">Назва</h2>
+        <p class="category">Категорія</p>
+        <p class="price">Ціна</p>
         <div class="rating">зірочки</div>
         <div class="product-colors">
           <p class="label">Колір</p>
@@ -29,7 +33,7 @@
                 />
                 <span
                   class="color-checkbox-marker"
-                  style="background-color: #a1a1a1"
+                  style="background-color: #c7c3bb"
                 ></span>
               </label>
             </li>
@@ -43,7 +47,7 @@
                 />
                 <span
                   class="color-checkbox-marker"
-                  style="background-color: #d3c1af"
+                  style="background-color: #c7aa80"
                 ></span>
               </label>
             </li>
@@ -57,13 +61,16 @@
                 />
                 <span
                   class="color-checkbox-marker"
-                  style="background-color: #2c2c3e"
+                  style="background-color: #201a19"
                 ></span>
               </label>
             </li>
           </ul>
         </div>
-        <p class="description"></p>
+        <div class="description">
+          <p class="description-text">Опис</p>
+          <p class="description-text">Опис розміру</p>
+        </div>
         <button class="order-btn" data-id="${id}">Перейти до замовлення</button>
       </div>
     </div>
