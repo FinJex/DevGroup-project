@@ -17,7 +17,11 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "accordion-js": "^3.4.1",
+=======
+    "axios": "^1.14.0",
+>>>>>>> f9960c9ed9f1b3cbdd25018b339cbac4efa19f4d
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }
