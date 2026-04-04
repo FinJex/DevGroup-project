@@ -119,6 +119,21 @@
   margin-bottom: 24px;
 }
 
+.star-container {
+  display: flex;
+  min-height: 20px;
+  min-width: 100px;
+}
+
+.star-icon {
+  --star-icon-url: url('/assets/star-rating.icons.svg') !important;
+}
+
+.star-icon.color-default .star-filled,
+.star-icon.color-default .star-half::after {
+  color: #080c09;
+}
+
 .label {
   font-weight: 400;
   font-size: 16px;
@@ -177,7 +192,7 @@
   font-size: 16px;
   color: #fff;
 
-  background-color: #8c2233;
+  background-color: #711013;
   box-shadow: 0 1px 2px 0;
 
   transition: background-color 250ms;
@@ -185,6 +200,27 @@
 
 .order-btn:hover {
   box-shadow: 0 1px 2px 0;
-  background: #8c2233;
+  background-color: #711013;
   opacity: 0.5;
 }
+
+.star {
+  display: inline-block !important;
+  width: 20px;
+  height: 20px;
+  background-color: #8c2233;
+  font-size: 20px;
+}
+
+/*.star i {
+  display: inline-block !important;
+  width: 20px !important;
+  height: 20px !important;
+  visibility: visible !important;
+}
+.star-empty {
+  background-color: #ccc;
+}
+.star-filled {
+  background-color: #ffcc00;
+}*/
