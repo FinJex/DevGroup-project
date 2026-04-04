@@ -1,12 +1,44 @@
 <footer class="footer">
-  <div class="footer-container">
+  <div class="container footer-container">
+    <!-- Логотип -->
     <a href="/" class="footer-logo">
-      <img src="/src/img/logo/logo-white.svg" alt="Меблерія логотип" />
-      <span>Меблерія</span>
+      <img src="/img/logo/logo-white.svg" alt="" />
     </a>
 
-    <p class="footer-copy">© 2025 Меблерія. Всі права захищені.</p>
+    <!-- Копірайт -->
+    <p class="footer-copy">
+      © <span id="year"></span> Меблерія. Всі права захищені.
+    </p>
 
-    <!-- соцмережі далі -->
+    <!-- Навігація -->
+    <nav class="footer-nav">
+      <ul class="footer-nav-list">
+        <li><a href="./furniture-list.html">Наші меблі</a></li>
+        <li><a href="./about.html">Про нас</a></li>
+        <li><a href="./faq.html">Часті питання</a></li>
+        <li><a href="./feedback.html">Відгуки</a></li>
+      </ul>
+    </nav>
+
+    <!-- Соцмережі -->
+    <div class="footer-socials">
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+        <svg width="24" height="24">
+          <use href="/img/sprite.svg#icon-youtube"></use>
+        </svg>
+      </a>
+
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <svg width="24" height="24">
+          <use href="/img/sprite.svg#icon-instagram"></use>
+        </svg>
+      </a>
+
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <svg width="24" height="24">
+          <use href="/img/sprite.svg#icon-facebook"></use>
+        </svg>
+      </a>
+    </div>
   </div>
 </footer>
