@@ -20,7 +20,7 @@ export function renderCategories(categories) {
 const markup = [
   `<li>
     <button class="category-btn active"
-            data-category="all"
+            data-id="all"
             data-bg="${categoryImages['all']}">
       Всі товари
     </button>
@@ -29,7 +29,7 @@ const markup = [
     return `
       <li>
         <button class="category-btn"
-                data-category="${cat.name}"
+                data-id="${cat._id}"  
                 data-bg="${categoryImages[cat.name]}">
           ${cat.name}
         </button>
@@ -78,6 +78,6 @@ export function renderFurniture(list) {
      </li>
    `;
  }).join('');
-
  refs.furnitureList.insertAdjacentHTML('beforeend', markup);
 }
+
