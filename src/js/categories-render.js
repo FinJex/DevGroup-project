@@ -41,8 +41,7 @@ refs.categories.innerHTML = markup;
 
 const buttons = refs.categories.querySelectorAll('.category-btn');
 buttons.forEach(btn => {
-  const repoName = 'DevGroup-project';
-  const img1x = `/${repoName}/img/furniture-list/${btn.dataset.bg}`;
+  const img1x = `../img/furniture-list/${btn.dataset.bg}`;
   const img2x = img1x.replace(/\.jpg$/, '@2x.jpg');
   btn.style.backgroundImage = `url(${img1x})`;
   if (window.devicePixelRatio > 1) {
