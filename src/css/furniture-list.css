@@ -200,22 +200,80 @@
     }
 }
 
-.category-btn[data-category="sofa"] {
-    background-image: image-set(url("../img/furniture-list/sofa.jpg") 1x,
-            url("../img/furniture-list/sofa@2x.jpg") 2x);
+.category-btn[data-category="М'які меблі"] {
+    background-image: image-set(url('../img/furniture-list/sofa.jpg') 1x,
+            url('../img/furniture-list/sofa@2x.jpg') 2x);
 }
 
-.category-btn[data-category="bed"] {
-    background-image: image-set(url("../img/furniture-list/bed.jpg") 1x,
-            url("../img/furniture-list/bed@2x.jpg") 2x);
+
+.category-btn[data-category="Шафи та системи зберігання"] {
+    background-image: image-set(url('../img/furniture-list/wardrobe.jpg') 1x,
+            url('../img/furniture-list/wardrobe@2x.jpg') 2x);
 }
 
-.category-btn[data-category="table"] {
-    background-image: image-set(url("../img/furniture-list/table.jpg") 1x,
-            url("../img/furniture-list/table@2x.jpg") 2x);
+
+.category-btn[data-category="Ліжка та матраци"] {
+    background-image: image-set(url('../img/furniture-list/bed.jpg') 1x,
+            url('../img/furniture-list/bed@2x.jpg') 2x);
 }
-.category-btn[data-category="table"] {
-    background-image: image-set(url("../img/furniture-list/table.jpg") 1x,
-            url("../img/furniture-list/table@2x.jpg") 2x);
+
+
+.category-btn[data-category="Столи"] {
+    background-image: image-set(url('../img/furniture-list/table.jpg') 1x,
+            url('../img/furniture-list/table@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="Стільці та табурети"] {
+    background-image: image-set(url('../img/furniture-list/chairs.jpg') 1x,
+            url('../img/furniture-list/chairs@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="Кухні"] {
+    background-image: image-set(url('../img/furniture-list/kitchen.jpg') 1x,
+            url('../img/furniture-list/kitchen@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="Меблі для дитячої"] {
+    background-image: image-set(url('../img/furniture-list/childrens-room.jpg') 1x,
+            url('../img/furniture-list/childrens-room@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="Меблі для офісу"] {
+    background-image: image-set(url('../img/furniture-list/home-office.jpg') 1x,
+            url('../img/furniture-list/home-office@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="Меблі для передпокою"] {
+    background-image: image-set(url('../img/furniture-list/entryway.jpg') 1x,
+            url('../img/furniture-list/entryway@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="Меблі для ванної кімнати"] {
+    background-image: image-set(url('../img/furniture-list/bathroom.jpg') 1x,
+            url('../img/furniture-list/bathroom@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="Садові та вуличні меблі"] {
+    background-image: image-set(url('../img/furniture-list/outdoor-patio.jpg') 1x,
+            url('../img/furniture-list/outdoor-patio@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="Декор та аксесуари"] {
+    background-image: image-set(url('../img/furniture-list/home-decor.jpg') 1x,
+            url('../img/furniture-list/home-decor@2x.jpg') 2x);
+}
+
+
+.category-btn[data-category="all"] {
+    background-image: image-set(url('../img/furniture-list/showroom.jpg') 1x,
+            url('../img/furniture-list/showroom@2x.jpg') 2x);
 }
 
