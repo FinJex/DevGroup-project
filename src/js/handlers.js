@@ -5,6 +5,7 @@ import {
   getProductsByCategory,
 } from './categories-api';
 import { renderCategories, renderFurniture } from './categories-render';
+import { toggleLoadMoreBtn } from './helpers';
 import { refs } from './refs';
 
 let page = 1;
@@ -80,14 +81,6 @@ export async function handleLoadMore() {
     toggleLoadMoreBtn();
   } catch (error) {
     console.log(error);
-  }
-}
-
-function toggleLoadMoreBtn() {
-  if (page >= totalPages) {
-    refs.loadMoreBtn.classList.add('hidden');
-  } else {
-    refs.loadMoreBtn.classList.remove('hidden');
   }
 }
 
