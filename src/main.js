@@ -1,3 +1,12 @@
+import { initHomePage } from './js/handlers';
+import { initFaq } from './js/faq';
+import './css/faq.css';
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHomePage();
+  initFaq();
+});
+
 import {
   handleLoadMore,
   handlerByCategories,
@@ -10,4 +19,7 @@ import './js/footer.js';
 document.addEventListener('DOMContentLoaded', initHomePage);
 
 refs.categories.addEventListener('click', handlerByCategories);
+
+refs.loadMoreBtn.addEventListener('click', handleLoadMore);
+
 refs.loadMoreBtn.addEventListener('click', handleLoadMore);
