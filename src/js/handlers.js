@@ -5,24 +5,41 @@ import {
   getProductsByCategory,
 } from './categories-api';
 import { renderCategories, renderFurniture } from './categories-render';
+import {
+  hideLoader,
+  hideLoadMoreBtn,
+  showLoader,
+  showLoadMoreBtn,
+  showToast,
+} from './helpers';
 import { refs } from './refs';
 
-let page = 1;
+let page;
 let currentCategory = 'all';
-let totalPages = 1;
+let totalPages;
+
+function toggleLoadMoreBtn() {
+  if (page >= totalPages) {
+    hideLoadMoreBtn();
+    showToast('Вибачте, більше результатів немає');
+  } else {
+    showLoadMoreBtn();
+  }
+}
 
 export async function initHomePage() {
   page = 1;
   try {
+    showLoader();
     const categories = await getCategories();
-    console.log(categories);
-    const allCategories = ['Всі товари', ...categories];
     renderCategories(categories);
     const { furnitures, totalItems } = await getProducts(page);
-    console.log(furnitures, totalItems);
     renderFurniture(furnitures);
+    toggleLoadMoreBtn();
   } catch (error) {
-    console.log(error);
+    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
+  } finally {
+    hideLoader();
   }
 }
 
@@ -42,6 +59,7 @@ export async function handlerByCategories(e) {
     refs.furnitureList.innerHTML = '';
 
     let data;
+    showLoader();
 
     if (currentCategory === 'all') {
       data = await getProducts(page);
@@ -57,7 +75,9 @@ export async function handlerByCategories(e) {
 
     toggleLoadMoreBtn();
   } catch (error) {
-    console.log(error);
+    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
+  } finally {
+    hideLoader();
   }
 }
 
@@ -66,6 +86,7 @@ export async function handleLoadMore() {
 
   try {
     let data;
+    showLoader();
 
     if (currentCategory === 'all') {
       data = await getProducts(page);
@@ -79,23 +100,20 @@ export async function handleLoadMore() {
 
     toggleLoadMoreBtn();
   } catch (error) {
-    console.log(error);
-  }
-}
-
-function toggleLoadMoreBtn() {
-  if (page >= totalPages) {
-    refs.loadMoreBtn.classList.add('hidden');
-  } else {
-    refs.loadMoreBtn.classList.remove('hidden');
+    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
+  } finally {
+    hideLoader();
   }
 }
 
 export async function handlerModal(e) {
   const id = e.target.closest('li').dataset.id;
   try {
+    showLoader();
     const modal = await getProductInModal(id);
   } catch (error) {
-    console.log(error);
+    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
+  } finally {
+    hideLoader();
   }
 }
