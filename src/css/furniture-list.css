@@ -131,6 +131,7 @@
 .load-more {
     display: block;
     margin: 0 auto;
+    border: none;
     border-radius: 100px;
     padding: 10px 24px;
     width: 340px;
@@ -192,7 +193,6 @@
         width: 158px;
     }
 }
-
 
 @media screen and (min-width: 1440px) {
     .category-btn {

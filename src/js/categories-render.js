@@ -20,7 +20,7 @@ export function renderCategories(categories) {
 const markup = [
   `<li>
     <button class="category-btn active"
-            data-category="all"
+            data-id="all"
             data-bg="${categoryImages['all']}">
       Всі товари
     </button>
@@ -29,7 +29,7 @@ const markup = [
     return `
       <li>
         <button class="category-btn"
-                data-category="${cat.name}"
+                data-id="${cat._id}"  
                 data-bg="${categoryImages[cat.name]}">
           ${cat.name}
         </button>
@@ -41,7 +41,7 @@ refs.categories.innerHTML = markup;
 
 const buttons = refs.categories.querySelectorAll('.category-btn');
 buttons.forEach(btn => {
-  const img1x = `img/furniture-list/${btn.dataset.bg}`;
+  const img1x = `../img/furniture-list/${btn.dataset.bg}`;
   const img2x = img1x.replace(/\.jpg$/, '@2x.jpg');
   btn.style.backgroundImage = `url(${img1x})`;
   if (window.devicePixelRatio > 1) {
@@ -78,6 +78,6 @@ export function renderFurniture(list) {
      </li>
    `;
  }).join('');
-
  refs.furnitureList.insertAdjacentHTML('beforeend', markup);
 }
+
