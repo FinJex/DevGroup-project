@@ -18,15 +18,13 @@ export async function getCategories() {
 }
 
 export async function getProducts(page) {
-  const res = await axios(
-    `${API_ENDPOINTS.PRODUCTS}?page=${page}&limit=${ITEMS_PER_PAGE}`
-  );
+  const res = await axios(`/furnitures?page=${page}&limit=${ITEMS_PER_PAGE}`);
   return res.data;
 }
 
 export async function getProductsByCategory(category, page) {
   const res = await axios(
-    `${API_ENDPOINTS.PRODUCTS}?page=${page}&limit=${ITEMS_PER_PAGE}&${category}`
+    `/furnitures?page=${page}&limit=${ITEMS_PER_PAGE}&category=${category}`
   );
   return res.data;
 }

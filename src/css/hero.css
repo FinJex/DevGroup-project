@@ -16,6 +16,7 @@ line-height: 1.2;
 letter-spacing: 0.01em;
 color: #fff;
 margin-bottom: 24px;
+width: 335px;
 }
 
 .hero-description{
@@ -23,6 +24,7 @@ margin-bottom: 24px;
 line-height: 1.6;
 color: #fff;
 margin-bottom: 32px;
+width: 335px;
 }
 
 .hero-button{
@@ -50,18 +52,29 @@ border: none;
             url("../img/hero/hero-tablet@2x.jpg") 2x
         );
     }
-
+.hero-title{
+    width: 560px;
+}
+.hero-description{
+    width: 560px;
 }
 .hero-button{
 width: 209px;
 height: 46px;
 }
+}
+
 @media screen and (min-width: 1440px) { 
  .hero {
+    padding-bottom: 92px;
+    padding-top: 92px;
+    height: 507px;
         background-image: image-set(
             url("../img/hero/hero-desktop.jpg") 1x,
             url("../img/hero/hero-desktop@2x.jpg") 2x
         );
     }
-
+.hero-title{
+    font-size: 56px;
+}
 }
