@@ -199,3 +199,23 @@
         width: 166px;
     }
 }
+
+.category-btn[data-category="sofa"] {
+    background-image: image-set(url("../img/furniture-list/sofa.jpg") 1x,
+            url("../img/furniture-list/sofa@2x.jpg") 2x);
+}
+
+.category-btn[data-category="bed"] {
+    background-image: image-set(url("../img/furniture-list/bed.jpg") 1x,
+            url("../img/furniture-list/bed@2x.jpg") 2x);
+}
+
+.category-btn[data-category="table"] {
+    background-image: image-set(url("../img/furniture-list/table.jpg") 1x,
+            url("../img/furniture-list/table@2x.jpg") 2x);
+}
+.category-btn[data-category="table"] {
+    background-image: image-set(url("../img/furniture-list/table.jpg") 1x,
+            url("../img/furniture-list/table@2x.jpg") 2x);
+}
+
