@@ -1,8 +1,10 @@
 export const refs = {
-categories: document.querySelector('.categories-list'),
-furnitureList: document.querySelector('.furniture-list'),
-loadMoreBtn: document.querySelector(".load-more"),
-backdrop: document.querySelector(".backdrop"),
-modal: document.querySelector(".modal"),
-loader: document.querySelector('.loader'),     
+  categories: document.querySelector('.categories-list'),
+  furnitureList: document.querySelector('.furniture-list'),
+  loadMoreBtn: document.querySelector('.load-more'),
+  loader: document.querySelector('.loader'),
+  backdrop: document.querySelector('.backdrop'),
+  modalCloseBtn: document.querySelector('.modal-close-btn'),
+  orderBtn: document.querySelector('.order-btn'),
+  productModal: document.getElementById('product-backdrop'),
 };
