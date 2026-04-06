@@ -2,7 +2,6 @@ import 'css-star-rating/css/star-rating.css';
 
 import { getProductInModal } from './categories-api';
 import { refs } from './refs';
-import { handlerModal } from './handlers';
 
 function updateRating(value) {
   const ratingEl = document.querySelector('.rating');
