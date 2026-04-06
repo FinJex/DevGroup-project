@@ -37,7 +37,7 @@ export async function initHomePage() {
     renderFurniture(furnitures);
     toggleLoadMoreBtn();
   } catch (error) {
-    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
+    showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.');
   } finally {
     hideLoader();
   }
