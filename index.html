@@ -22,7 +22,7 @@ wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&displa
     <script type="module" crossorigin src="/DevGroup-project/index.js"></script>
     <link rel="modulepreload" crossorigin href="/DevGroup-project/assets/vendor-CqFioJNj.js">
     <link rel="stylesheet" crossorigin href="/DevGroup-project/assets/vendor-Ug69zcqz.css">
-    <link rel="stylesheet" crossorigin href="/DevGroup-project/assets/index-D-Fckzvt.css">
+    <link rel="stylesheet" crossorigin href="/DevGroup-project/assets/index-B5m_WQ63.css">
   </head>
   <body>
     
@@ -388,7 +388,55 @@ wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&displa
 </section>
 
       
-      
+      <div class="backdrop is-open">
+  <div class="modal">
+    <button type="button" class="modal-close-btn">
+      <svg class="modal-close-btn-svg" width="32" height="32">
+        <use href="../img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="order-form-container">
+      <h2 class="order-title">Замовити</h2>
+      <form id="order-form" class="order-form">
+        <div class="form-group">
+          <label for="user-name">Ім'я</label>
+          <input
+            type="text"
+            id="user-name"
+            name="name"
+            required
+            placeholder="Placeholder"
+          />
+          <span class="error-text">Error text</span>
+        </div>
+        <div class="form-group">
+          <label for="user-phone">Телефон</label>
+          <input
+            type="tel"
+            id="user-phone"
+            name="phone"
+            required
+            placeholder="Placeholder"
+          />
+          <span class="error-text">Error text</span>
+        </div>
+        <div class="form-group">
+          <label for="user-comment">Коментар</label>
+          <textarea
+            id="user-comment"
+            name="comment"
+            rows="3"
+            required
+            placeholder="Type your message"
+          ></textarea>
+          <span class="error-text">Error text</span>
+        </div>
+        <button type="submit" class="submit-btn">Надіслати заявку</button>
+      </form>
+    </div>
+  </div>
+</div>
+
     </main>
 
     <footer class="footer">
