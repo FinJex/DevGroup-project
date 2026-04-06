@@ -1,25 +1,18 @@
-import { initHomePage } from './js/handlers';
+import {
+  initHomePage,
+  handleLoadMore,
+  handlerByCategories,
+} from './js/handlers';
 import { initFaq } from './js/faq';
 import './css/faq.css';
+import { refs } from './js/refs';
+import './js/footer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHomePage();
   initFaq();
 });
 
-import {
-  handleLoadMore,
-  handlerByCategories,
-  initHomePage,
-} from './js/handlers';
-
-import { refs } from './js/refs';
-import './js/footer.js';
-
-document.addEventListener('DOMContentLoaded', initHomePage);
-
 refs.categories.addEventListener('click', handlerByCategories);
-
-refs.loadMoreBtn.addEventListener('click', handleLoadMore);
 
 refs.loadMoreBtn.addEventListener('click', handleLoadMore);
