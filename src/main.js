@@ -2,6 +2,7 @@ import {
   initHomePage,
   handleLoadMore,
   handlerByCategories,
+  handlerModal,
 } from './js/handlers';
 import { initFaq } from './js/faq';
 import './css/faq.css';
@@ -18,7 +19,7 @@ refs.categories.addEventListener('click', handlerByCategories);
 
 refs.loadMoreBtn.addEventListener('click', handleLoadMore);
 
-refs.loadMoreBtn.addEventListener('click', openModal);
+refs.furnitureList.addEventListener('click', handlerModal);
 
 refs.orderBtn?.addEventListener('click', () => {
   const productId = orderBtn.dataset.id;
@@ -34,33 +35,13 @@ refs.orderBtn?.addEventListener('click', () => {
   openOrderForm(); // ф-я відкриття другої модалки
 });
 
-// refs.modalCloseBtn?.addEventListener('click', closeModal);
-// refs.backdrop.addEventListener('click', e => {
-//   if (e.target === backdrop) closeModal(refs.productModal);
-// });
-
-// window.addEventListener('keydown', e => {
-//   if (e.key === 'Escape') closeModal(refs.productModal);
-// });
-
-document.querySelectorAll('.modal-close-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    closeModal(productModal);
-    closeModal(orderModal);
-  });
+refs.modalCloseBtn?.addEventListener('click', e => {
+  closeModal(refs.productModal);
+});
+refs.backdrop.addEventListener('click', e => {
+  if (e.target === refs.backdrop) closeModal(refs.productModal);
 });
 
-[productModal, orderModal].forEach(modal => {
-  modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      closeModal(modal);
-    }
-  });
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closeModal(productModal);
-    closeModal(orderModal);
-  }
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal(refs.productModal);
 });
