@@ -2,6 +2,7 @@ import 'css-star-rating/css/star-rating.css';
 
 import { getProductInModal } from './categories-api';
 import { refs } from './refs';
+import { handlerModal } from './handlers';
 
 function updateRating(value) {
   const ratingEl = document.querySelector('.rating');
@@ -39,8 +40,6 @@ export async function openModal(id) {
     renderModalContent(modal);
 
     initColorMarkers();
-
-    console.log('close btn', modalCloseBtn);
 
     refs.backdrop.classList.add('is-open');
     document.body.style.overflow = 'hidden';
@@ -137,12 +136,11 @@ export function renderModalContent(product) {
             Перейти до замовлення
           </button>
           </div>
-          </div>
-           </div>
-  </div>
-</div>`;
+        </div>
+      </div>`;
 
   const modalContainer = document.querySelector('.product-modal');
+  modalContainer.dataset.id = id;
   modalContainer.innerHTML = markup;
 
   updateRating(product.rate);

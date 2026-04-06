@@ -30,7 +30,7 @@ export async function getProductsByCategory(category, page) {
 }
 
 export async function getProductInModal(id) {
-  const res = await axios(`${API_ENDPOINTS.PRODUCTS}/${id}`);
+  const res = await axios(`/furnitures/${id}`);
   return res.data;
 }
 
