@@ -19,7 +19,7 @@
   display: none;
 }
 .close-btn {
-  display: none;
+  display: block;
   padding: 8px;
   border: none;
   background-color: transparent;
@@ -49,7 +49,7 @@ transition: all 0.25s ease;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #e107e1;
+  background-color: #ffffff;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-100%);
@@ -58,14 +58,7 @@ transition: all 0.25s ease;
     visibility 1s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 102px 32px 24px 32px;
 }
-.is-open {
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
-  transition:
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 .header-mobile-list {
   display: flex;
   flex-direction: column;
@@ -133,6 +126,28 @@ transition: all 0.25s ease;
   opacity: 0.5;
   transition: all 0.25s ease;
 }
+.header-burger-hidann {
+  display: none;
+}
+.header-darkness {
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  top: 74px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #080c09;
+  opacity: 0.1;
+}
+.is-open {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 @media only screen and (max-width: 375px) {
   .burger-buy-btn {
     max-width: fit-content;
@@ -175,5 +190,8 @@ transition: all 0.25s ease;
   }
   .close-btn {
     display: none;
+  }
+  .header-darkness {
+    visibility: hidden;
   }
 }
