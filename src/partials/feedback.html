@@ -1,206 +1,53 @@
 <section class="feedback" id="feedback">
   <div class="container">
-    <div class="feedback-header">
-      <h2 class="feedback-title">Відгуки клієнтів</h2>
-      <p class="feedback-subtitle">
-        Дізнайтеся, що кажуть наші задоволені клієнти про наші меблі.
+    <div class="feedback__header">
+      <p class="feedback__eyebrow">Відгуки Клієнтів</p>
+      <h2 class="feedback__title">Відгуки Клієнтів</h2>
+      <p class="feedback__subtitle">
+        Дізнайтеся, що кажуть наші задоволені клієнти про наші меблі
       </p>
     </div>
 
-    <div class="feedback-content">
-      <ul class="feedback-list">
-        <li class="feedback-item">
-          <ul class="feedback-rating" aria-label="Рейтинг 4 з 5">
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-outline"></use>
-              </svg>
-            </li>
-          </ul>
+    <div class="feedback__content" data-feedback-section>
+      <span class="loader feedback__loader hidden" data-feedback-loader></span>
 
-          <p class="feedback-text">
-            "Дуже задоволена покупкою! Диван не тільки стильний, а й неймовірно
-            зручний. Доставка була швидкою, все без жодної подряпини."
-          </p>
-
-          <p class="feedback-author">Олена Коваль</p>
-        </li>
-
-        <li class="feedback-item">
-          <ul class="feedback-rating" aria-label="Рейтинг 4 з 5">
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-outline"></use>
-              </svg>
-            </li>
-          </ul>
-
-          <p class="feedback-text">
-            "Замовляв шафу й ліжко - все приїхало раніше терміну. Якість
-            перевершила очікування, збирання зайняло мінімум часу."
-          </p>
-
-          <p class="feedback-author">Андрій Шевченко</p>
-        </li>
-
-        <li class="feedback-item">
-          <ul class="feedback-rating" aria-label="Рейтинг 4 з 5">
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-filled"></use>
-              </svg>
-            </li>
-            <li class="feedback-star">
-              <svg width="24" height="24" aria-hidden="true">
-                <use href="#icon-star-outline"></use>
-              </svg>
-            </li>
-          </ul>
-
-          <p class="feedback-text">
-            "Нарешті знайшли меблі, які ідеально вписались у наш інтер'єр. Сайт
-            зручний, підтримка завжди на зв'язку."
-          </p>
-
-          <p class="feedback-author">Іванна Петренко</p>
-        </li>
-      </ul>
-
-      <div class="feedback-controls">
-        <ul class="feedback-pagination" aria-label="Пагінація відгуків">
-          <li>
-            <button
-              class="feedback-dot is-active"
-              type="button"
-              aria-label="Слайд 1"
-            ></button>
-          </li>
-          <li>
-            <button class="feedback-dot" type="button" aria-label="Слайд 2"></button>
-          </li>
-          <li>
-            <button class="feedback-dot" type="button" aria-label="Слайд 3"></button>
-          </li>
-          <li>
-            <button class="feedback-dot" type="button" aria-label="Слайд 4"></button>
-          </li>
-          <li>
-            <button class="feedback-dot" type="button" aria-label="Слайд 5"></button>
-          </li>
-          <li>
-            <button class="feedback-dot" type="button" aria-label="Слайд 6"></button>
-          </li>
-        </ul>
-
-        <div class="feedback-nav">
+      <div class="feedback__slider-wrap hidden" data-feedback-ready>
+        <div class="feedback__controls">
           <button
-            class="feedback-nav-btn"
+            class="feedback__nav feedback__nav--prev"
             type="button"
             aria-label="Попередній відгук"
+            data-feedback-prev
           >
-            <svg width="24" height="24" aria-hidden="true">
-              <use href="#icon-arrow-left"></use>
+            <svg class="feedback__nav-icon" width="24" height="24" aria-hidden="true">
+              <use href="/img/sprite.svg#icon-chevron-down"></use>
             </svg>
           </button>
+
           <button
-            class="feedback-nav-btn"
+            class="feedback__nav feedback__nav--next"
             type="button"
             aria-label="Наступний відгук"
+            data-feedback-next
           >
-            <svg width="24" height="24" aria-hidden="true">
-              <use href="#icon-arrow-right"></use>
+            <svg class="feedback__nav-icon" width="24" height="24" aria-hidden="true">
+              <use href="/img/sprite.svg#icon-chevron-down"></use>
             </svg>
           </button>
         </div>
+
+        <div class="swiper feedback-swiper" data-feedback-swiper>
+          <ul class="swiper-wrapper feedback__list" data-feedback-list></ul>
+        </div>
+
+        <div
+          class="feedback__pagination"
+          aria-label="Навігація по відгуках"
+          data-feedback-pagination
+        ></div>
       </div>
     </div>
   </div>
 
-  <svg
-    class="feedback-icons"
-    width="0"
-    height="0"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <symbol id="icon-star-filled" viewBox="0 0 24 24">
-      <path
-        d="M12 1.75L15.115 8.062L22.083 9.074L17.041 13.989L18.231 20.93L12 17.654L5.769 20.93L6.959 13.989L1.917 9.074L8.885 8.062L12 1.75Z"
-        fill="currentColor"
-      />
-    </symbol>
-    <symbol id="icon-star-outline" viewBox="0 0 24 24">
-      <path
-        d="M12 3.721L14.645 9.08L14.995 9.789L15.778 9.903L21.692 10.762L17.413 14.933L16.847 15.485L16.981 16.264L17.991 22.155L12.701 19.374L12 19.006L11.299 19.374L6.009 22.155L7.019 16.264L7.153 15.485L6.587 14.933L2.308 10.762L8.222 9.903L9.005 9.789L9.355 9.08L12 3.721ZM12 1.75L8.436 8.972L1.917 9.92L6.633 14.517L5.52 21.007L12 17.654L18.48 21.007L17.367 14.517L22.083 9.92L15.564 8.972L12 1.75Z"
-        fill="currentColor"
-      />
-    </symbol>
-    <symbol id="icon-arrow-left" viewBox="0 0 24 24">
-      <path
-        d="M14.706 6.706C15.096 7.096 15.096 7.73 14.706 8.12L10.828 12L14.706 15.88C15.096 16.27 15.096 16.904 14.706 17.294C14.316 17.684 13.682 17.684 13.292 17.294L8.706 12.708C8.316 12.318 8.316 11.684 8.706 11.294L13.292 6.706C13.682 6.316 14.316 6.316 14.706 6.706Z"
-        fill="currentColor"
-      />
-    </symbol>
-    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
-      <path
-        d="M9.294 6.706C8.904 7.096 8.904 7.73 9.294 8.12L13.172 12L9.294 15.88C8.904 16.27 8.904 16.904 9.294 17.294C9.684 17.684 10.318 17.684 10.708 17.294L15.294 12.708C15.684 12.318 15.684 11.684 15.294 11.294L10.708 6.706C10.318 6.316 9.684 6.316 9.294 6.706Z"
-        fill="currentColor"
-      />
-    </symbol>
-  </svg>
+  <script type="module" src="./js/feedback.js"></script>
 </section>
