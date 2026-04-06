@@ -1,6 +1,7 @@
 import 'css-star-rating/css/star-rating.css';
 
 import { getProductInModal } from './categories-api';
+import { refs } from './refs';
 
 function updateRating(value) {
   const ratingEl = document.querySelector('.rating');
@@ -24,10 +25,6 @@ function updateRating(value) {
   }
 }
 
-const backdrop = document.querySelector('.backdrop');
-const modalCloseBtn = document.querySelector('.modal-close-btn');
-const orderBtn = document.querySelector('.order-btn');
-
 export function initColorMarkers() {
   const colorInputs = document.querySelectorAll('.color-checkbox-input');
   if (colorInputs.length > 0) {
@@ -45,32 +42,23 @@ export async function openModal(id) {
 
     console.log('close btn', modalCloseBtn);
 
-    backdrop.classList.add('is-open');
+    refs.backdrop.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   } catch (error) {
     console.error('Помилка при завантаженні даних товару', error);
   }
 }
 
-export function closeModal() {
-  backdrop.classList.remove('is-open');
-  document.body.style.overflow = '';
+export function closeModal(modal) {
+  modal.classList.remove('is-open');
+
+  if (
+    !productModal.classList.contains('is-open') &&
+    !orderModal.classList.contains('is-open')
+  ) {
+    document.body.style.overflow = '';
+  }
 }
-
-modalCloseBtn?.addEventListener('click', closeModal);
-
-orderBtn?.addEventListener('click', () => {
-  closeModal();
-  openOrderForm(); // ф-я відкриття другої модалки
-});
-
-backdrop.addEventListener('click', e => {
-  if (e.target === backdrop) closeModal();
-});
-
-window.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
 
 export function renderModalContent(product) {
   const {
@@ -154,7 +142,7 @@ export function renderModalContent(product) {
   </div>
 </div>`;
 
-  const modalContainer = document.querySelector('.modal');
+  const modalContainer = document.querySelector('.product-modal');
   modalContainer.innerHTML = markup;
 
   updateRating(product.rate);
