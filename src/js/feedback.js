@@ -1,7 +1,10 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+import Raty from 'raty-js';
+import 'raty-js/src/raty.css';
 
 const API_URL = 'https://furniture-store-v2.b.goit.study/api/feedbacks?page=1&limit=10';
 
@@ -33,6 +36,7 @@ async function initFeedbackSection() {
 
     refs.list.innerHTML = createFeedbackMarkup(feedbacks);
     refs.readyState.classList.remove('hidden');
+    initRatings();
     initSwiper(feedbacks.length);
   } catch (error) {
     showErrorToast();
@@ -56,10 +60,20 @@ async function getFeedbacks() {
 function initSwiper(slidesCount) {
   feedbackSwiper = new Swiper('[data-feedback-swiper]', {
     slidesPerView: 1,
-    spaceBetween: 16,
+    spaceBetween: 24,
     speed: 500,
     grabCursor: true,
     allowTouchMove: slidesCount > 1,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+      1440: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+    },
     keyboard: {
       enabled: true,
       onlyInViewport: true,
@@ -111,16 +125,18 @@ function createFeedbackMarkup(feedbacks) {
         <li class="swiper-slide feedback__item">
           <article class="feedback__card">
             <div class="feedback__rating-row">
-              <div class="feedback__stars" aria-label="Оцінка ${roundedRating} з 5">
-                ${createStarsMarkup(roundedRating, index)}
-              </div>
+              <div
+                class="feedback__stars"
+                data-feedback-rating
+                data-feedback-score="${roundedRating}"
+                aria-label="Оцінка ${roundedRating} з 5"
+              ></div>
               <span class="feedback__score">${formatRating(roundedRating)}</span>
             </div>
 
-            <p class="feedback__text">${escapeHtml(reviewText)}</p>
+            <p class="feedback__text">“${escapeHtml(reviewText)}”</p>
 
             <div class="feedback__author">
-              <span class="feedback__author-badge" aria-hidden="true">${getInitials(author)}</span>
               <p class="feedback__author-name">${escapeHtml(author)}</p>
             </div>
           </article>
@@ -128,6 +144,25 @@ function createFeedbackMarkup(feedbacks) {
       `;
     })
     .join('');
+}
+
+function initRatings() {
+  const ratingElements = document.querySelectorAll('[data-feedback-rating]');
+
+  ratingElements.forEach(element => {
+    const score = Number(element.dataset.feedbackScore);
+
+    new Raty(element, {
+      readOnly: true,
+      score,
+      half: true,
+      halfShow: true,
+      starType: 'i',
+      number: 5,
+      hints: Array(5).fill(''),
+      space: true,
+    }).init();
+  });
 }
 
 function normalizeRating(rating) {
@@ -145,45 +180,6 @@ function normalizeRating(rating) {
 
 function formatRating(rating) {
   return Number.isInteger(rating) ? String(rating) : rating.toFixed(1);
-}
-
-function createStarsMarkup(rating, feedbackIndex) {
-  return Array.from({ length: 5 }, (_, index) => {
-    const starNumber = index + 1;
-    const isFilled = rating >= starNumber;
-    const isHalf = !isFilled && rating === starNumber - 0.5;
-    const gradientId = `feedback-half-star-${feedbackIndex}-${starNumber}`;
-
-    return `
-      <svg
-        class="feedback__star ${isFilled ? 'is-filled' : ''} ${isHalf ? 'is-half' : ''}"
-        viewBox="0 0 24 24"
-        width="20"
-        height="20"
-        aria-hidden="true"
-      >
-        <defs>
-          <linearGradient id="${gradientId}">
-            <stop offset="50%" stop-color="currentColor"></stop>
-            <stop offset="50%" stop-color="#d8d3c8"></stop>
-          </linearGradient>
-        </defs>
-        <path
-          fill="${isHalf ? `url(#${gradientId})` : 'currentColor'}"
-          d="M12 2.75l2.86 5.8 6.4.93-4.63 4.51 1.09 6.37L12 17.35 6.28 20.36l1.09-6.37L2.74 9.48l6.4-.93L12 2.75z"
-        ></path>
-      </svg>
-    `;
-  }).join('');
-}
-
-function getInitials(name) {
-  return name
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map(part => part[0]?.toUpperCase() ?? '')
-    .join('') || 'A';
 }
 
 function escapeHtml(value) {
