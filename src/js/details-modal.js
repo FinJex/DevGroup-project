@@ -1,28 +1,7 @@
-import 'css-star-rating/css/star-rating.css';
+import Raty from 'raty-js';
+import 'raty-js/src/raty.css';
 
 import { refs } from './refs';
-
-function updateRating(value) {
-  const ratingEl = document.querySelector('.rating');
-  if (!ratingEl) return;
-
-  ratingEl.classList.remove(
-    'value-1',
-    'value-2',
-    'value-3',
-    'value-4',
-    'value-5',
-    'half'
-  );
-
-  const integerPart = Math.floor(value);
-  const hasHalf = value % 1 !== 0;
-
-  ratingEl.classList.add(`value-${integerPart}`);
-  if (hasHalf) {
-    ratingEl.classList.add('half');
-  }
-}
 
 export function initColorMarkers() {
   const colorInputs = document.querySelectorAll('.color-checkbox-input');
@@ -62,17 +41,6 @@ export function renderModalContent(product) {
     )
     .join('');
 
-  const starsMarkup = Array(5)
-    .fill('')
-    .map(
-      () => `<div class="star">
-              <i class="star-empty"></i>
-              <i class="star-half"></i>
-              <i class="star-filled"></i>
-            </div>`
-    )
-    .join('');
-
   const markup = `<div class="backdrop is-open">
   <div class="modal">
     <button type="button" class="modal-close-btn">
@@ -93,9 +61,10 @@ export function renderModalContent(product) {
         <h2 class="product-title">${name}</h2>
         <p class="category">${categoryName}</p>
         <p class="price">${price} грн</p>
-        <div class="rating large star-icon value-1 half color-default label-top">
-        <div class="star-container">${starsMarkup}</div>
-        </div>
+        <div class="rating-wrapper">
+          <div class="stars-container" data-raty data-score="${rate}">
+            </div>
+          </div>
          <div class="product-colors">
             <p class="label">Колір</p>
             <ul class="color-checkbox-list">${colorListMarkup}</ul>
@@ -113,7 +82,26 @@ export function renderModalContent(product) {
 
   refs.modalContainer.innerHTML = markup;
 
-  updateRating(product.rate);
+  initRatings();
+}
+
+export function initRatings() {
+  const elements = document.querySelectorAll('[data-raty]');
+
+  elements.forEach(el => {
+    if (el.children.length > 0) return;
+
+    const score = el.dataset.score || 0;
+
+    const raty = new Raty(el, {
+      score: score,
+      readOnly: true,
+      half: true,
+      starType: 'i',
+    });
+
+    raty.init();
+  });
 }
 
 export function closeModal(e) {

@@ -61,37 +61,14 @@
   margin-bottom: 24px;
 }
 
-/*.rating {
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 24px;
-
+[data-raty] {
   display: flex;
-  justify-content: flex-start !important;
-  align-items: flex-start !important;
-  -webkit-box-pack: start !important;
-  -webkit-box-align: start !important;
-}*/
-
-.rating {
-  display: flex;
-  font-weight: 400;
-  font-size: 16px;
+  gap: 4px;
   margin-bottom: 24px;
 }
 
-.star-container {
-  min-height: 16px;
-  min-width: 96px;
-}
-
-.star-icon {
-  --star-icon-url: url('/star-rating.icons.svg') !important;
-  visibility: visible !important;
-}
-
-.star-icon.color-default .star-filled,
-.star-icon.color-default .star-half::after {
+[data-raty] i {
+  font-size: 16px;
   color: #080c09;
 }
 
