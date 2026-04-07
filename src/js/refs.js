@@ -14,6 +14,6 @@ export const refs = {
   modalCloseBtn: document.querySelector('.modal-close-btn'),
   modalContainer: document.querySelector('.product-modal'),
   orderBtn: document.querySelector('.order-btn'),
-  productModal: document.getElementById('.product-backdrop'),
-  orderModal: document.getElementById('.order-backdrop'),
+  productModal: document.getElementById('product-backdrop'),
+  orderModal: document.getElementById('order-backdrop'),
 };
