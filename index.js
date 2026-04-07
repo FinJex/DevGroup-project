@@ -46,7 +46,7 @@ import{r as e}from"./assets/rolldown-runtime-Cq0jCQ29.js";import{n as t,r as n,t
   <div class="modal">
     <button type="button" class="modal-close-btn">
       <svg class="modal-close-btn-svg" width="32" height="32">
-        <use href="../img/sprite.svg#icon-close"></use>
+        <use href="/img/sprite.svg#icon-close"></use>
       </svg>
     </button>
     <div class="product-modal" data-id="${t}">
