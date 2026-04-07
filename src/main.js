@@ -1,6 +1,5 @@
-<<<<<<< HEAD
+
 import './js/header.js';
-=======
 import {
   initHomePage,
   handleLoadMore,
@@ -39,4 +38,4 @@ refs.orderBtn?.addEventListener('click', () => {
 });
 
 refs.backdrop.addEventListener('click', closeModal);
->>>>>>> 16cd421bd5faa142831ae0b49903f79365e683f9
+
