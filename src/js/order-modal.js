@@ -13,8 +13,11 @@ export function onOrderBtnClick(e) {
   document.querySelector('#product-color').value = selectedColor;
   console.log(selectedColor);
   console.log(productId);
+  refs.productModal.classList.remove('is-open');
+  document.body.style.overflow = '';
   openOrderForm();
   document.addEventListener('keydown', closeOrderModalEsc);
+
   //   closeModal();
 }
 
