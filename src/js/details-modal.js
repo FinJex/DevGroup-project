@@ -33,7 +33,7 @@ export function initColorMarkers() {
 
 export function renderModalContent(product) {
   const {
-    id,
+    _id,
     images,
     name,
     category: { name: categoryName },
@@ -80,7 +80,7 @@ export function renderModalContent(product) {
         <use href="/img/sprite.svg#icon-close"></use>
       </svg>
     </button>
-    <div class="product-modal" data-id="${id}">
+    <div class="product-modal" data-id="${_id}">
       <div class="product-gallery">
         <img src="${images[0]}" class="main-img" alt="Product image" />
         <div class="thumb-list">
@@ -104,14 +104,13 @@ export function renderModalContent(product) {
             <p class="description-text">${description}</p>
             <p class="sizes">Розміри: ${sizes}</p>
           </div>
-          <button class="order-btn" data-id="${id}">
+          <button class="order-btn" data-id="${_id}">
             Перейти до замовлення
           </button>
           </div>
         </div>
       </div>`;
 
-  refs.modalContainer.dataset.id = id;
   refs.modalContainer.innerHTML = markup;
 
   updateRating(product.rate);

@@ -1,4 +1,4 @@
-<div class="backdrop" data-id="order-backdrop">
+<div class="backdrop" id="order-backdrop">
   <div class="modal">
     <button type="button" class="modal-close-btn">
       <svg class="modal-close-btn-svg" width="32" height="32">
@@ -41,6 +41,8 @@
           ></textarea>
           <span class="error-text">Error text</span>
         </div>
+        <input type="hidden" name="productId" id="product-id" />
+        <input type="hidden" name="color" id="product-color" />
         <button type="submit" class="submit-btn">Надіслати заявку</button>
       </form>
     </div>
