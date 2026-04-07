@@ -5,7 +5,8 @@ export const refs = {
   loader: document.querySelector('.loader'),
   backdrop: document.querySelector('.backdrop'),
   modalCloseBtn: document.querySelector('.modal-close-btn'),
+  modalContainer: document.querySelector('.product-modal'),
   orderBtn: document.querySelector('.order-btn'),
-  productModal: document.getElementById('product-backdrop'),
-  orderModal: document.getElementById('order-backdrop'),
+  productModal: document.getElementById('.product-backdrop'),
+  orderModal: document.getElementById('.order-backdrop'),
 };
