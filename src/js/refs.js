@@ -11,3 +11,10 @@ export const refs = {
   nextBtn: document.querySelector('[data-feedback-next]'),
   pagination: document.querySelector('[data-feedback-pagination]'),
 };
+  backdrop: document.querySelector('.backdrop'),
+  modalCloseBtn: document.querySelector('.modal-close-btn'),
+  modalContainer: document.querySelector('.product-modal'),
+  orderBtn: document.querySelector('.order-btn'),
+  productModal: document.getElementById('.product-backdrop'),
+  orderModal: document.getElementById('.order-backdrop'),
+};
