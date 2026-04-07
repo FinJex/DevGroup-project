@@ -95,6 +95,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .title-ac {
+    font-size: 48px;
+  }
+
   .faq {
     padding: 80px 64px;
     max-width: 865px;
