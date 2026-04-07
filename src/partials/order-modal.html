@@ -1,55 +1,54 @@
-<<<<<<< HEAD
 <div class="backdrop" id="order-backdrop">
   <div class="modal">
-=======
-<div class="backdrop">
-  <div class="modal order-modal">
->>>>>>> 21f663497520f7ea3a90cec3856fbf5338f356ad
-    <button type="button" class="modal-close-btn">
-      <svg class="modal-close-btn-svg" width="32" height="32">
-        <use href="/img/sprite.svg#icon-close"></use>
-      </svg>
-    </button>
-    <div class="order-form-container">
-      <h2 class="order-title">Замовити</h2>
-      <form id="order-form" class="order-form">
-        <div class="form-group">
-          <label for="user-name">Ім'я</label>
-          <input
-            type="text"
-            id="user-name"
-            name="name"
-            required
-            placeholder="Placeholder"
-          />
-          <span class="error-text">Error text</span>
+    <div class="backdrop">
+      <div class="modal order-modal">
+        <button type="button" class="modal-close-btn">
+          <svg class="modal-close-btn-svg" width="32" height="32">
+            <use href="/img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="order-form-container">
+          <h2 class="order-title">Замовити</h2>
+          <form id="order-form" class="order-form">
+            <div class="form-group">
+              <label for="user-name">Ім'я</label>
+              <input
+                type="text"
+                id="user-name"
+                name="name"
+                required
+                placeholder="Placeholder"
+              />
+              <span class="error-text">Error text</span>
+            </div>
+            <div class="form-group">
+              <label for="user-phone">Телефон</label>
+              <input
+                type="tel"
+                id="user-phone"
+                name="phone"
+                required
+                placeholder="Placeholder"
+              />
+              <span class="error-text">Error text</span>
+            </div>
+            <div class="form-group">
+              <label for="user-comment">Коментар</label>
+              <textarea
+                id="user-comment"
+                name="comment"
+                rows="3"
+                required
+                placeholder="Type your message"
+              ></textarea>
+              <span class="error-text">Error text</span>
+            </div>
+            <input type="hidden" name="productId" id="product-id" />
+            <input type="hidden" name="color" id="product-color" />
+            <button type="submit" class="submit-btn">Надіслати заявку</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="user-phone">Телефон</label>
-          <input
-            type="tel"
-            id="user-phone"
-            name="phone"
-            required
-            placeholder="Placeholder"
-          />
-          <span class="error-text">Error text</span>
-        </div>
-        <div class="form-group">
-          <label for="user-comment">Коментар</label>
-          <textarea
-            id="user-comment"
-            name="comment"
-            rows="3"
-            required
-            placeholder="Type your message"
-          ></textarea>
-          <span class="error-text">Error text</span>
-        </div>
-        <input type="hidden" name="productId" id="product-id" />
-        <input type="hidden" name="color" id="product-color" />
-        <button type="submit" class="submit-btn">Надіслати заявку</button>
-      </form>
+      </div>
     </div>
   </div>
 </div>
