@@ -8,7 +8,7 @@ import { initFaq } from './js/faq';
 import './css/faq.css';
 import { refs } from './js/refs';
 import './js/footer.js';
-import { closeModal, openModal } from './js/details-modal.js';
+import { closeModal, hideModal } from './js/details-modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHomePage();
@@ -31,17 +31,8 @@ refs.orderBtn?.addEventListener('click', () => {
   )?.value;
   document.getElementById('product-color').value = selectedColor;
 
-  closeModal(refs.productModal);
+  closeModal();
   openOrderForm(); // ф-я відкриття другої модалки
 });
 
-refs.modalCloseBtn?.addEventListener('click', e => {
-  closeModal(refs.productModal);
-});
-refs.backdrop.addEventListener('click', e => {
-  if (e.target === refs.backdrop) closeModal(refs.productModal);
-});
-
-window.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal(refs.productModal);
-});
+refs.backdrop.addEventListener('click', closeModal);
