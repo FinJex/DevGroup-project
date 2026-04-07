@@ -6,6 +6,12 @@ import {
 } from './categories-api';
 import { renderCategories, renderFurniture } from './categories-render';
 import {
+  closeModalEsc,
+  initColorMarkers,
+  renderModalContent,
+  showModal,
+} from './details-modal';
+import {
   hideLoader,
   hideLoadMoreBtn,
   showLoader,
@@ -108,9 +114,14 @@ export async function handleLoadMore() {
 
 export async function handlerModal(e) {
   const id = e.target.closest('li').dataset.id;
+
   try {
     showLoader();
     const modal = await getProductInModal(id);
+    showModal();
+    renderModalContent(modal);
+    initColorMarkers();
+    document.addEventListener('keydown', closeModalEsc);
   } catch (error) {
     showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
   } finally {

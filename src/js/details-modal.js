@@ -1,6 +1,5 @@
 import 'css-star-rating/css/star-rating.css';
 
-import { getProductInModal } from './categories-api';
 import { refs } from './refs';
 
 function updateRating(value) {
@@ -29,34 +28,6 @@ export function initColorMarkers() {
   const colorInputs = document.querySelectorAll('.color-checkbox-input');
   if (colorInputs.length > 0) {
     colorInputs[0].checked = true;
-  }
-}
-
-export async function openModal(id) {
-  try {
-    const modal = await getProductInModal(id);
-
-    renderModalContent(modal);
-
-    initColorMarkers();
-
-    console.log('close btn', modalCloseBtn);
-
-    refs.backdrop.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  } catch (error) {
-    console.error('Помилка при завантаженні даних товару', error);
-  }
-}
-
-export function closeModal(modal) {
-  modal.classList.remove('is-open');
-
-  if (
-    !productModal.classList.contains('is-open') &&
-    !orderModal.classList.contains('is-open')
-  ) {
-    document.body.style.overflow = '';
   }
 }
 
@@ -106,7 +77,7 @@ export function renderModalContent(product) {
   <div class="modal">
     <button type="button" class="modal-close-btn">
       <svg class="modal-close-btn-svg" width="32" height="32">
-        <use href="../img/sprite.svg#icon-close"></use>
+        <use href="/img/sprite.svg#icon-close"></use>
       </svg>
     </button>
     <div class="product-modal" data-id="${id}">
@@ -137,14 +108,38 @@ export function renderModalContent(product) {
             Перейти до замовлення
           </button>
           </div>
-          </div>
-           </div>
-  </div>
-</div>`;
+        </div>
+      </div>`;
 
-  const modalContainer = document.querySelector('.product-modal');
-  modalContainer.innerHTML = markup;
+  refs.modalContainer.dataset.id = id;
+  refs.modalContainer.innerHTML = markup;
 
   updateRating(product.rate);
 }
-// openModal('682f9bbf8acbdf505592ac37');
+
+export function closeModal(e) {
+  if (
+    e.target.classList.contains('backdrop') ||
+    e.target.classList.contains('modal-close-btn-svg') ||
+    e.target.classList.contains('order-btn')
+  ) {
+    hideModal();
+    document.removeEventListener('keydown', closeModalEsc);
+    refs.modalContainer.innerHTML = '';
+  }
+}
+export function closeModalEsc(e) {
+  if (e.key === 'Escape') {
+    hideModal();
+    document.removeEventListener('keydown', closeModalEsc);
+    refs.modalContainer.innerHTML = '';
+  }
+}
+
+export function showModal() {
+  refs.backdrop.classList.add('is-open');
+}
+
+export function hideModal() {
+  refs.backdrop.classList.remove('is-open');
+}

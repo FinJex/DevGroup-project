@@ -1,13 +1,17 @@
+<<<<<<< HEAD
+import './js/header.js';
+=======
 import {
   initHomePage,
   handleLoadMore,
   handlerByCategories,
+  handlerModal,
 } from './js/handlers';
 import { initFaq } from './js/faq';
 import './css/faq.css';
 import { refs } from './js/refs';
 import './js/footer.js';
-import { closeModal, openModal } from './js/details-modal.js';
+import { closeModal, hideModal } from './js/details-modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHomePage();
@@ -18,7 +22,7 @@ refs.categories.addEventListener('click', handlerByCategories);
 
 refs.loadMoreBtn.addEventListener('click', handleLoadMore);
 
-refs.loadMoreBtn.addEventListener('click', openModal);
+refs.furnitureList.addEventListener('click', handlerModal);
 
 refs.orderBtn?.addEventListener('click', () => {
   const productId = orderBtn.dataset.id;
@@ -30,37 +34,9 @@ refs.orderBtn?.addEventListener('click', () => {
   )?.value;
   document.getElementById('product-color').value = selectedColor;
 
-  closeModal(refs.productModal);
+  closeModal();
   openOrderForm(); // ф-я відкриття другої модалки
 });
 
-// refs.modalCloseBtn?.addEventListener('click', closeModal);
-// refs.backdrop.addEventListener('click', e => {
-//   if (e.target === backdrop) closeModal(refs.productModal);
-// });
-
-// window.addEventListener('keydown', e => {
-//   if (e.key === 'Escape') closeModal(refs.productModal);
-// });
-
-document.querySelectorAll('.modal-close-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    closeModal(productModal);
-    closeModal(orderModal);
-  });
-});
-
-[productModal, orderModal].forEach(modal => {
-  modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      closeModal(modal);
-    }
-  });
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closeModal(productModal);
-    closeModal(orderModal);
-  }
-});
+refs.backdrop.addEventListener('click', closeModal);
+>>>>>>> 16cd421bd5faa142831ae0b49903f79365e683f9
