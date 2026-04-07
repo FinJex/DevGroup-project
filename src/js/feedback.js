@@ -5,26 +5,13 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import Raty from 'raty-js';
 import 'raty-js/src/raty.css';
+import { refs } from './refs';
 
 const API_URL = 'https://furniture-store-v2.b.goit.study/api/feedbacks?page=1&limit=10';
 
-const refs = {
-  section: document.querySelector('[data-feedback-section]'),
-  loader: document.querySelector('[data-feedback-loader]'),
-  readyState: document.querySelector('[data-feedback-ready]'),
-  list: document.querySelector('[data-feedback-list]'),
-  prevBtn: document.querySelector('[data-feedback-prev]'),
-  nextBtn: document.querySelector('[data-feedback-next]'),
-  pagination: document.querySelector('[data-feedback-pagination]'),
-};
-
 let feedbackSwiper;
 
-if (refs.section) {
-  initFeedbackSection();
-}
-
-async function initFeedbackSection() {
+export async function initFeedbackSection() {
   showLoader();
 
   try {
