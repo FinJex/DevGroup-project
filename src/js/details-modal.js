@@ -138,8 +138,10 @@ export function closeModalEsc(e) {
 
 export function showModal() {
   refs.backdrop.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
 }
 
 export function hideModal() {
   refs.backdrop.classList.remove('is-open');
+  document.body.style.overflow = '';
 }
