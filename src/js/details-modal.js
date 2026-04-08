@@ -35,7 +35,8 @@ export function renderModalContent(product) {
                     class="color-checkbox-input"
                     {${index === 0 ? 'checked' : ''}
                   />
-                  <span class="color-checkbox-marker" style="background-color: ${hex}"></span>
+                  <span class="color-checkbox-marker" style="background-color: ${hex};
+border: ${hex.toLowerCase() === '#FFFFFF' ? '1px solid #E1E1E1' : 'none'};"></span>
                 </label>
               </li>`
     )
