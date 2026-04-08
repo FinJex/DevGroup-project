@@ -42,6 +42,7 @@ export async function initHomePage() {
     const { furnitures, totalItems } = await getProducts(page);
     renderFurniture(furnitures);
     toggleLoadMoreBtn();
+    showToast('Меблі успішно завантажено!');
   } catch (error) {
     showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.');
   } finally {
@@ -80,6 +81,7 @@ export async function handlerByCategories(e) {
     renderFurniture(furnitures);
 
     toggleLoadMoreBtn();
+    showToast('Меблі успішно завантажено!');
   } catch (error) {
     showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
   } finally {
@@ -105,6 +107,7 @@ export async function handleLoadMore() {
     renderFurniture(furnitures);
 
     toggleLoadMoreBtn();
+    showToast('Меблі успішно завантажено!');
   } catch (error) {
     showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
   } finally {
