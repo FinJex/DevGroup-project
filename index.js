@@ -56,7 +56,8 @@ import{r as e}from"./assets/rolldown-runtime-Cq0jCQ29.js";import{a as t,i as n,n
                     class="color-checkbox-input"
                     {${t===0?`checked`:``}
                   />
-                  <span class="color-checkbox-marker" style="background-color: ${e}"></span>
+                  <span class="color-checkbox-marker" style="background-color: ${e};
+border: ${e.toLowerCase()===`#FFFFFF`?`1px solid #E1E1E1`:`none`};"></span>
                 </label>
               </li>`).join(``),f=`
     <div class="product-modal" data-id="${t}">
