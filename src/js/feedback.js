@@ -179,12 +179,12 @@ function escapeHtml(value) {
 }
 
 function showLoader() {
-  refs.loader.classList.remove('hidden');
+  refs.loaderFeedback.classList.remove('hidden');
   refs.readyState.classList.add('hidden');
 }
 
 function hideLoader() {
-  refs.loader.classList.add('hidden');
+  refs.loaderFeedback.classList.add('hidden');
 }
 
 function showErrorToast() {

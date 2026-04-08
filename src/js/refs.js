@@ -4,7 +4,7 @@ export const refs = {
   loadMoreBtn: document.querySelector('.load-more'),
   loader: document.querySelector('.loader'),
   section: document.querySelector('[data-feedback-section]'),
-  loader: document.querySelector('[data-feedback-loader]'),
+  loaderFeedback: document.querySelector('[data-feedback-loader]'),
   readyState: document.querySelector('[data-feedback-ready]'),
   list: document.querySelector('[data-feedback-list]'),
   prevBtn: document.querySelector('[data-feedback-prev]'),

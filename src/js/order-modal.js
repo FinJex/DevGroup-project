@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { refs } from './refs';
-import { showToast } from './helpers';
+import { hideLoader, showLoader, showToast } from './helpers';
 
 export function onOrderBtnClick(e) {
   const orderBtn = e.target.closest('.order-btn');
@@ -55,6 +55,7 @@ export async function handlerOrderForm(e) {
   console.log(formData);
 
   try {
+    showLoader();
     const res = await axios.post('/orders', formData);
     const orderData = res.data;
     showToast(
@@ -66,4 +67,5 @@ export async function handlerOrderForm(e) {
   } catch (error) {
     showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.');
   }
+  finally{hideLoader()}
 }
