@@ -41,13 +41,7 @@ export function renderModalContent(product) {
     )
     .join('');
 
-  const markup = `<div class="backdrop is-open">
-  <div class="modal">
-    <button type="button" class="modal-close-btn">
-      <svg class="modal-close-btn-svg" width="32" height="32">
-        <use href="/img/sprite.svg#icon-close"></use>
-      </svg>
-    </button>
+  const markup = `
     <div class="product-modal" data-id="${_id}">
       <div class="product-gallery">
         <img src="${images[0]}" class="main-img" alt="Product image" />
@@ -107,10 +101,14 @@ export function initRatings() {
 export function closeModal(e) {
   if (
     e.target.classList.contains('backdrop') ||
-    e.target.classList.contains('modal-close-btn-svg') ||
-    e.target.classList.contains('order-btn')
+    e.target.classList.contains('modal-close-btn-svg')
   ) {
     hideModal();
+    document.removeEventListener('keydown', closeModalEsc);
+    refs.modalContainer.innerHTML = '';
+  }
+  if (e.target.classList.contains('order-btn')) {
+    refs.backdrop.classList.remove('is-open');
     document.removeEventListener('keydown', closeModalEsc);
     refs.modalContainer.innerHTML = '';
   }

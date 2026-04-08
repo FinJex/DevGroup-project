@@ -11,14 +11,10 @@ export function onOrderBtnClick(e) {
     'input[name="color"]:checked'
   )?.value;
   document.querySelector('#product-color').value = selectedColor;
-  console.log(selectedColor);
-  console.log(productId);
-  refs.productModal.classList.remove('is-open');
-  document.body.style.overflow = '';
-  openOrderForm();
-  document.addEventListener('keydown', closeOrderModalEsc);
 
-  //   closeModal();
+  openOrderForm();
+
+  document.addEventListener('keydown', closeOrderModalEsc);
 }
 
 function openOrderForm() {
