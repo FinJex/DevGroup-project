@@ -27,6 +27,6 @@ refs.furnitureList.addEventListener('click', handlerModal);
 
 refs.modalContainer.addEventListener('click', onOrderBtnClick);
 
-refs.backdrop.addEventListener('click', closeModal);
+refs.productModal.addEventListener('click', closeModal);
 
 refs.orderModal.addEventListener('click', closeOrderForm);
