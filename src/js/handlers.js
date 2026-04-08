@@ -40,6 +40,7 @@ export async function initHomePage() {
     const categories = await getCategories();
     renderCategories(categories);
     const { furnitures, totalItems } = await getProducts(page);
+    totalPages = Math.ceil(totalItems / 8);
     renderFurniture(furnitures);
     toggleLoadMoreBtn();
     showToast('Меблі успішно завантажено!');
