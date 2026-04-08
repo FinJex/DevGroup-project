@@ -131,18 +131,19 @@
 }
 
 .load-more {
-    display: block;
-    margin: 0 auto;
-    border: none;
-    border-radius: 100px;
-    padding: 10px 24px;
-    width: 340px;
-    height: 46px;
-    background-color: #6b0609;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #fff;
+display: block;
+margin: 0 auto;
+border: none;
+border-radius: 100px;
+padding: 10px 24px;
+width: 100%;
+max-width: 340px;
+height: 46px;
+background-color: #6B0609;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.6;
+color: #fff;
 }
 
 .load-more:hover,
@@ -152,9 +153,9 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .load-more {
-        width: 421px;
-    }
+.load-more {
+max-width: 421px;
+}
 }
 
 .category-btn {
