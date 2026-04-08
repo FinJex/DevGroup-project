@@ -1,4 +1,6 @@
+import axios from 'axios';
 import { refs } from './refs';
+import { showToast } from './helpers';
 
 export function onOrderBtnClick(e) {
   const orderBtn = e.target.closest('.order-btn');
@@ -18,7 +20,6 @@ export function onOrderBtnClick(e) {
 }
 
 function openOrderForm() {
-  console.log(refs.orderModal);
   refs.orderModal.classList.add('is-open');
   document.body.style.overflow = 'hidden';
 }
@@ -39,5 +40,30 @@ function closeOrderModalEsc(e) {
     refs.orderModal.classList.remove('is-open');
     document.body.style.overflow = '';
     document.removeEventListener('keydown', closeOrderModalEsc);
+  }
+}
+
+export async function handlerOrderForm(e) {
+  e.preventDefault();
+  const { name, phone, productId, color } = e.target.elements;
+  const formData = {
+    name: name.value,
+    phone: phone.value,
+    modelId: productId.value,
+    color: color.value,
+  };
+  console.log(formData);
+
+  try {
+    const res = await axios.post('/orders', formData);
+    const orderData = res.data;
+    showToast(
+      `Ваші дані успішно відправлені. Номер замовлення ${orderData.orderNum}`
+    );
+    refs.orderModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    e.target.reset();
+  } catch (error) {
+    showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.');
   }
 }

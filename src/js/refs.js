@@ -16,4 +16,5 @@ export const refs = {
   orderBtn: document.querySelector('.order-btn'),
   productModal: document.querySelector('#product-backdrop'),
   orderModal: document.querySelector('#order-backdrop'),
+  orderForm: document.querySelector('#order-form'),
 };
