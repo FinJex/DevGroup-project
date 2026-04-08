@@ -1,4 +1,3 @@
-
 import './js/header.js';
 import {
   initHomePage,
@@ -10,8 +9,13 @@ import { initFaq } from './js/faq';
 import './css/faq.css';
 import { refs } from './js/refs';
 import './js/footer.js';
+import { closeModal } from './js/details-modal.js';
+import {
+  closeOrderForm,
+  handlerOrderForm,
+  onOrderBtnClick,
+} from './js/order-modal.js';
 import { initFeedbackSection } from './js/feedback.js';
-import { closeModal, hideModal } from './js/details-modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHomePage();
@@ -25,19 +29,10 @@ refs.loadMoreBtn.addEventListener('click', handleLoadMore);
 
 refs.furnitureList.addEventListener('click', handlerModal);
 
-refs.orderBtn?.addEventListener('click', () => {
-  const productId = orderBtn.dataset.id;
+refs.modalContainer.addEventListener('click', onOrderBtnClick);
 
-  document.getElementById('product-id').value = productId;
+refs.productModal.addEventListener('click', closeModal);
 
-  const selectedColor = document.querySelector(
-    'input[name="selected-color"]:checked'
-  )?.value;
-  document.getElementById('product-color').value = selectedColor;
+refs.orderModal.addEventListener('click', closeOrderForm);
 
-  closeModal();
-  openOrderForm(); // ф-я відкриття другої модалки
-});
-
-refs.backdrop.addEventListener('click', closeModal);
-
+refs.orderForm.addEventListener('submit', handlerOrderForm);
