@@ -325,7 +325,7 @@ wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&displa
 </div>
 
       <div class="backdrop" id="order-backdrop">
-  <div class="modal order-modal">
+  <div class="modal order-modal" id="order-form">
     <button type="button" class="modal-close-btn">
       <svg class="modal-close-btn-svg" width="32" height="32">
         <use href="/DevGroup-project/assets/sprite-Djxa2fab.svg#icon-close"></use>
@@ -337,22 +337,25 @@ wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&displa
         <div class="form-group">
           <label for="user-name">Ім'я</label>
           <input
+            autocomplete="off"
             type="text"
             id="user-name"
             name="name"
             required
-            placeholder="Placeholder"
+            placeholder="Введіть ім'я"
           />
           <span class="error-text">Error text</span>
         </div>
         <div class="form-group">
           <label for="user-phone">Телефон</label>
           <input
+            autocomplete="off"
             type="tel"
             id="user-phone"
             name="phone"
             required
-            placeholder="Placeholder"
+            placeholder="380501234567"
+            pattern="^\+?[0-9]{12}$"
           />
           <span class="error-text">Error text</span>
         </div>
@@ -362,7 +365,6 @@ wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&displa
             id="user-comment"
             name="comment"
             rows="3"
-            required
             placeholder="Type your message"
           ></textarea>
           <span class="error-text">Error text</span>
