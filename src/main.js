@@ -10,7 +10,11 @@ import './css/faq.css';
 import { refs } from './js/refs';
 import './js/footer.js';
 import { closeModal } from './js/details-modal.js';
-import { closeOrderForm, onOrderBtnClick } from './js/order-modal.js';
+import {
+  closeOrderForm,
+  handlerOrderForm,
+  onOrderBtnClick,
+} from './js/order-modal.js';
 import { initFeedbackSection } from './js/feedback.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,3 +34,5 @@ refs.modalContainer.addEventListener('click', onOrderBtnClick);
 refs.productModal.addEventListener('click', closeModal);
 
 refs.orderModal.addEventListener('click', closeOrderForm);
+
+refs.orderForm.addEventListener('submit', handlerOrderForm);
