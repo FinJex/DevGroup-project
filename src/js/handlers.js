@@ -27,7 +27,7 @@ let totalPages;
 function toggleLoadMoreBtn() {
   if (page >= totalPages) {
     hideLoadMoreBtn();
-    showToast('Вибачте, більше результатів немає', 'warning');
+    showToast('Вибачте, більше результатів немає', type = 'warning');
   } else {
     showLoadMoreBtn();
   }
