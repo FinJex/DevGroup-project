@@ -27,7 +27,7 @@ let totalPages;
 function toggleLoadMoreBtn() {
   if (page >= totalPages) {
     hideLoadMoreBtn();
-    showToast('Вибачте, більше результатів немає');
+    showToast('Вибачте, більше результатів немає', 'warning');
   } else {
     showLoadMoreBtn();
   }
@@ -45,7 +45,7 @@ export async function initHomePage() {
     toggleLoadMoreBtn();
     showToast('Меблі успішно завантажено!');
   } catch (error) {
-    showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.');
+    showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.', 'error');
   } finally {
     hideLoader();
   }
@@ -84,7 +84,7 @@ export async function handlerByCategories(e) {
     toggleLoadMoreBtn();
     showToast('Меблі успішно завантажено!');
   } catch (error) {
-    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
+    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.', 'error');
   } finally {
     hideLoader();
   }
@@ -110,7 +110,7 @@ export async function handleLoadMore() {
     toggleLoadMoreBtn();
     showToast('Меблі успішно завантажено!');
   } catch (error) {
-    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
+    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.', 'error');
   } finally {
     hideLoader();
   }
@@ -127,7 +127,7 @@ export async function handlerModal(e) {
     initColorMarkers();
     document.addEventListener('keydown', closeModalEsc);
   } catch (error) {
-    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.');
+    showToast('Щось пішло не так. Спробуйте ще раз, будь ласка.', 'error');
   } finally {
     hideLoader();
   }
