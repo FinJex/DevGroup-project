@@ -65,7 +65,7 @@ export async function handlerOrderForm(e) {
     document.body.style.overflow = '';
     e.target.reset();
   } catch (error) {
-    showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.');
+    showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.', 'error');
   }
   finally{hideLoader()}
 }
