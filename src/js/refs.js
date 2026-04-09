@@ -18,4 +18,5 @@ export const refs = {
   orderModal: document.querySelector('#order-backdrop'),
   orderForm: document.querySelector('#order-form-id'),
   orderCloseBtn: document.querySelector('.order-close-btn'),
+  submitBtn: document.querySelector('.submit-btn'),
 };

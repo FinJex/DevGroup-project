@@ -4,10 +4,13 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 export function showLoader() {
   refs.loader.classList.remove('hidden');
+  refs.submitBtn.disabled = true;
+  refs.submitBtn.querySelector('.btn-text').textContent = 'Відправка...';
 }
 
 export function hideLoader() {
   refs.loader.classList.add('hidden');
+  refs.submitBtn.disabled = false;
 }
 
 export function showLoadMoreBtn() {
