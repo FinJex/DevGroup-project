@@ -2,6 +2,7 @@
     padding-top: 136px;
     padding-bottom: 137px;
     height: 617px;
+    background-image: url("../img/hero/hero-mobile.jpg");
     background-image: image-set(
         url("../img/hero/hero-mobile.jpg") 1x,
         url("../img/hero/hero-mobile@2x.jpg") 2x
@@ -53,6 +54,7 @@ border: none;
     height: 396px;
     padding-top: 79px;
     padding-bottom: 80px;
+    background-image: url("../img/hero/hero-tablet.jpg");
         background-image: image-set(
             url("../img/hero/hero-tablet.jpg") 1x,
             url("../img/hero/hero-tablet@2x.jpg") 2x
@@ -75,6 +77,7 @@ height: 46px;
     padding-bottom: 92px;
     padding-top: 92px;
     height: 507px;
+    background-image: url("../img/hero/hero-desktop.jpg");
         background-image: image-set(
             url("../img/hero/hero-desktop.jpg") 1x,
             url("../img/hero/hero-desktop@2x.jpg") 2x
