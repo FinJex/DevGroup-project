@@ -11,10 +11,11 @@ export const refs = {
   nextBtn: document.querySelector('[data-feedback-next]'),
   pagination: document.querySelector('[data-feedback-pagination]'),
   backdrop: document.querySelector('.backdrop'),
-  modalCloseBtn: document.querySelector('.modal-close-btn'),
+  modalCloseBtn: document.querySelector('.product-close-btn'),
   modalContainer: document.querySelector('.product-modal'),
   orderBtn: document.querySelector('.order-btn'),
   productModal: document.querySelector('#product-backdrop'),
   orderModal: document.querySelector('#order-backdrop'),
-  orderForm: document.querySelector('#order-form'),
+  orderForm: document.querySelector('#order-form-id'),
+  orderCloseBtn: document.querySelector('.order-close-btn'),
 };

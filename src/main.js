@@ -9,9 +9,10 @@ import { initFaq } from './js/faq';
 import './css/faq.css';
 import { refs } from './js/refs';
 import './js/footer.js';
-import { closeModal } from './js/details-modal.js';
+import { closeModal, closeModalBtn } from './js/details-modal.js';
 import {
   closeOrderForm,
+  closeOrderFormBtn,
   handlerOrderForm,
   onOrderBtnClick,
 } from './js/order-modal.js';
@@ -32,6 +33,10 @@ refs.furnitureList.addEventListener('click', handlerModal);
 refs.modalContainer.addEventListener('click', onOrderBtnClick);
 
 refs.productModal.addEventListener('click', closeModal);
+
+refs.modalCloseBtn.addEventListener('click', closeModalBtn);
+
+refs.orderCloseBtn.addEventListener('click', closeOrderFormBtn);
 
 refs.orderModal.addEventListener('click', closeOrderForm);
 

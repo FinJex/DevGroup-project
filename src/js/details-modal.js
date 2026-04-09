@@ -33,10 +33,12 @@ export function renderModalContent(product) {
                     name="color"
                     value="${hex}"
                     class="color-checkbox-input"
-                    {${index === 0 ? 'checked' : ''}
+                    ${index === 0 ? 'checked' : ''}
                   />
         <span class="color-checkbox-marker" style="background-color: ${hex};
-border: ${hex.toLowerCase() === '#FFFFFF' ? '1px solid #E1E1E1' : 'none'};"></span>
+border: ${
+        hex.toLowerCase() === '#ffffff' ? '1px solid #e1e1e1' : 'none'
+      };"></span>
                 </label>
               </li>`
     )
@@ -100,19 +102,17 @@ export function initRatings() {
 }
 
 export function closeModal(e) {
-  if (
-    e.target.classList.contains('backdrop') ||
-    e.target.classList.contains('modal-close-btn-svg')
-  ) {
+  if (e.target.classList.contains('backdrop')) {
     hideModal();
     document.removeEventListener('keydown', closeModalEsc);
     refs.modalContainer.innerHTML = '';
   }
-  if (e.target.classList.contains('order-btn')) {
-    refs.backdrop.classList.remove('is-open');
-    document.removeEventListener('keydown', closeModalEsc);
-    refs.modalContainer.innerHTML = '';
-  }
+}
+
+export function closeModalBtn() {
+  hideModal();
+  document.removeEventListener('keydown', closeModalEsc);
+  refs.modalContainer.innerHTML = '';
 }
 export function closeModalEsc(e) {
   if (e.key === 'Escape') {
