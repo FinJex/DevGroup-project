@@ -106,8 +106,9 @@
   transition: border-color 0.2s;
 }
 
-.color-checkbox-input:checked + .color-checkbox-marker {
-  border-color: 4px solid var(--color-neutral);
+.color-checkbox-label:has(.color-checkbox-input:checked)
+  .color-checkbox-marker {
+  box-shadow: 0 0 0 3px #838584;
 }
 
 .description {
@@ -133,6 +134,7 @@
 
 .order-btn {
   border-radius: 100px;
+  border: none;
   padding: 10px 24px;
   width: 295px;
   height: 46px;
