@@ -16,7 +16,8 @@ line-height: 1.2;
 letter-spacing: 0.01em;
 color: #fff;
 margin-bottom: 24px;
-width: 335px;
+width: 100%;
+max-width: 335px;
 }
 
 .hero-description{
@@ -24,7 +25,8 @@ width: 335px;
 line-height: 1.6;
 color: #fff;
 margin-bottom: 32px;
-width: 335px;
+width: 100%;
+max-width: 335px;
 }
 
 .hero-button{
@@ -34,7 +36,8 @@ color: #fff;
 border-radius: 100px;
 padding-block: 10px;
 padding-inline: 24px;
-width: 335px;
+width: 100%;
+max-width: 335px;
 height: 46px;
 box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
 background: #6b0609;
