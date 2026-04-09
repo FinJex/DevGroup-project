@@ -25,14 +25,17 @@ function openOrderForm() {
 }
 
 export function closeOrderForm(e) {
-  if (
-    e.target.classList.contains('backdrop') ||
-    e.target.classList.contains('modal-close-btn-svg')
-  ) {
+  if (e.target.classList.contains('backdrop')) {
     refs.orderModal.classList.remove('is-open');
     document.body.style.overflow = '';
     document.removeEventListener('keydown', closeOrderModalEsc);
   }
+}
+
+export function closeOrderFormBtn() {
+  refs.orderModal.classList.remove('is-open');
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', closeOrderModalEsc);
 }
 
 function closeOrderModalEsc(e) {
@@ -65,7 +68,11 @@ export async function handlerOrderForm(e) {
     document.body.style.overflow = '';
     e.target.reset();
   } catch (error) {
-    showToast('Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.', 'error');
+    showToast(
+      'Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.',
+      'error'
+    );
+  } finally {
+    hideLoader();
   }
-  finally{hideLoader()}
 }
