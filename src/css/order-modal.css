@@ -10,7 +10,6 @@
   font-size: 36px;
   line-height: 1.2;
   letter-spacing: 0.01em;
-  text-align: center;
   margin-bottom: 48px;
 }
 
@@ -69,6 +68,9 @@ textarea::placeholder:focus {
 }
 
 .submit-btn {
+  display: block;
+  margin: 0 auto;
+
   border: none;
   border-radius: 100px;
   padding: 10px 24px;
@@ -96,7 +98,7 @@ textarea {
 }
 
 @media screen and (min-width: 1440px) {
-  .order-modal {
+  #order-form {
     width: 866px;
     padding: 64px;
   }
