@@ -32,6 +32,12 @@
   margin-bottom: 40px;
 }
 
+@media screen and (min-width: 375px) {
+  .categories-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .categories-list {
     gap: 24px;
@@ -122,10 +128,6 @@
   font-size: 16px;
   line-height: 1.6;
   margin-top: auto;
-}
-
-.details-btn:hover {
-  background-color: #e0e0e0;
 }
 
 .load-more {
