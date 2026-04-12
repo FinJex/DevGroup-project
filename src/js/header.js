@@ -18,3 +18,20 @@ for (const item of headerCloseMobile.children) {
   const link = item.querySelector('a');
   if (link) link.addEventListener('click', toggleMenu);
 }
+headerShadov.addEventListener('click', (e) => {
+  e.stopPropagation();
+  for (let i = 0; i < document.querySelectorAll('.is-open').length; ) {
+      document.querySelectorAll('.is-open')[i].classList.remove('is-open');
+    }
+    burgerBtn.classList.remove('header-burger-hidann');
+    closeBtn.classList.add('header-burger-hidann');
+})
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    for (let i = 0; i < document.querySelectorAll('.is-open').length; ) {
+      document.querySelectorAll('.is-open')[i].classList.remove('is-open');
+    }
+    burgerBtn.classList.remove('header-burger-hidann');
+    closeBtn.classList.add('header-burger-hidann');
+  }
+});
