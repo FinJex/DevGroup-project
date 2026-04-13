@@ -19,4 +19,8 @@ export const refs = {
   orderForm: document.querySelector('#order-form-id'),
   orderCloseBtn: document.querySelector('.order-close-btn'),
   submitBtn: document.querySelector('.submit-btn'),
+  thanksModal: document.querySelector('#thanks-backdrop'),
+  thanksCloseBtn: document.querySelector('.thanks-close-btn-js'),
+  thanksCloseCross: document.querySelector('.thanks-close-btn-js'),
+  thanksCloseBtn: document.querySelector('.close-thanks-modal-btn'),
 };
