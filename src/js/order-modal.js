@@ -2,6 +2,7 @@ import axios from 'axios';
 import { refs } from './refs';
 import { hideLoader, showLoader, showToast } from './helpers';
 import { hideModal } from './details-modal';
+import { closeThanksModalEsc, openThanksForm } from './thanks-modal';
 
 export function onOrderBtnClick(e) {
   const orderBtn = e.target.closest('.order-btn');
@@ -61,9 +62,6 @@ export async function handlerOrderForm(e) {
   try {
     const res = await axios.post('/orders', formData);
     const orderData = res.data;
-    showToast(
-      `Ваші дані успішно відправлені. Номер замовлення ${orderData.orderNum}`
-    );
   } catch (error) {
     showToast(
       'Щось пішло не так. Спробуйте ще раз пізніше, будь ласка.',
@@ -72,7 +70,9 @@ export async function handlerOrderForm(e) {
   } finally {
     refs.orderModal.classList.remove('is-open');
     document.body.style.overflow = '';
+    openThanksForm();
     e.target.reset();
     hideLoader();
+    document.addEventListener('keydown', closeThanksModalEsc);
   }
 }

@@ -17,6 +17,7 @@ import {
   onOrderBtnClick,
 } from './js/order-modal.js';
 import { initFeedbackSection } from './js/feedback.js';
+import { closeThanksForm, closeThanksFormBtn } from './js/thanks-modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHomePage();
@@ -41,3 +42,9 @@ refs.orderCloseBtn.addEventListener('click', closeOrderFormBtn);
 refs.orderModal.addEventListener('click', closeOrderForm);
 
 refs.orderForm.addEventListener('submit', handlerOrderForm);
+
+refs.thanksCloseCross.addEventListener('click', closeThanksFormBtn);
+
+refs.thanksCloseBtn.addEventListener('click', closeThanksFormBtn);
+
+refs.thanksModal.addEventListener('click', closeThanksForm);
