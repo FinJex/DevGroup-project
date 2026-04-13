@@ -6,7 +6,7 @@ export function openThanksForm() {
 }
 
 export function closeThanksForm(e) {
-  if (e.target.classList.contains('backdrop')) {
+  if (e.target === refs.thanksModal) {
     refs.thanksModal.classList.remove('is-open');
     document.body.style.overflow = '';
     document.removeEventListener('keydown', closeThanksModalEsc);
