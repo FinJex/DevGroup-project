@@ -114,6 +114,7 @@ function createFeedbackMarkup(feedbacks) {
             <div class="feedback__rating-row">
               <div
                 class="feedback__stars"
+                role="img"
                 data-feedback-rating
                 data-feedback-score="${roundedRating}"
                 aria-label="Оцінка ${roundedRating} з 5"
